@@ -21,61 +21,66 @@ class SettingsScreen extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 50),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Account",
-                style: TextStyle(color: Colors.white),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              GestureDetector(
-                onTap: () => Navigator.pushNamed(context, "/profile"),
-                child: SettingsItem(
-                    icon: Icon(Icons.person_outline, color: Colors.white),
-                    title: "Keyvan Arasteh",
-                    description: "Change your password"),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Text(
-                  "General",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
-              SettingsItem(
-                  icon:
-                      Icon(Icons.filter_vintage_outlined, color: Colors.white),
-                  title: "Notifications",
-                  description: "Control how the app alert you"),
-              SettingsItem(
-                icon: Icon(
-                  Icons.privacy_tip_outlined,
-                  color: Colors.white,
-                ),
-                title: "Privacy",
-                description: "Manage how your data is handled and shared",
-              ),
-              SettingsItem(
-                icon: Icon(
-                  Icons.lock_outline,
-                  color: Colors.white,
-                ),
-                title: "Security",
-                description: "Custom security feature to fit your needs",
-              ),
-              SwitchItem(
-                  icon: Icon(
-                    Icons.swap_horizontal_circle_outlined,
-                    color: Colors.white,
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Container(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 50),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Account",
+                    style: TextStyle(color: Colors.white),
                   ),
-                  title: "Theme",
-                  description: "")
-            ],
+                  SizedBox(
+                    height: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, "/profile"),
+                    child: SettingsItem(
+                        icon: Icon(Icons.person_outline, color: Colors.white),
+                        title: "Keyvan Arasteh",
+                        description: "Change your password"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: Text(
+                      "General",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  SettingsItem(
+                      icon:
+                          Icon(Icons.filter_vintage_outlined, color: Colors.white),
+                      title: "Notifications",
+                      description: "Control how the app alert you"),
+                  SettingsItem(
+                    icon: Icon(
+                      Icons.privacy_tip_outlined,
+                      color: Colors.white,
+                    ),
+                    title: "Privacy",
+                    description: "Manage how your data is handled and shared",
+                  ),
+                  SettingsItem(
+                    icon: Icon(
+                      Icons.lock_outline,
+                      color: Colors.white,
+                    ),
+                    title: "Security",
+                    description: "Custom security feature to fit your needs",
+                  ),
+                  SwitchItem(
+                      icon: Icon(
+                        Icons.swap_horizontal_circle_outlined,
+                        color: Colors.white,
+                      ),
+                      title: "Theme",
+                      description: "")
+                ],
+              ),
+            ),
           ),
         ),
       ),
